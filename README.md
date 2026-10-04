@@ -109,3 +109,18 @@ curl -X POST http://127.0.0.1:5000/inventory/import/3017620422003 \
 
 - OpenFoodFacts asks clients to send a descriptive `User-Agent`; this is set in `external_api.py`.
 - The name search uses OpenFoodFacts' `cgi/search.pl` endpoint and can be slow; requests time out after 10 seconds.
+
+## Development workflow
+
+Features are built on separate branches and merged into `main` through pull requests:
+
+1. `git checkout -b feature-name`
+2. Commit changes and push: `git push -u origin feature-name`
+3. Open a pull request on GitHub, review, and merge
+4. Delete the branch after merging
+
+## Running on another port
+
+If port 5000 is busy:
+
+    flask --app app run --port 5001
